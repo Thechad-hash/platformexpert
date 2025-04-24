@@ -1,5 +1,7 @@
 import { useState, useRef } from "react";
 
+console.log(">>>> VITE_API_URL is:", import.meta.env.VITE_API_URL);
+
 export default function FeronChat() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
