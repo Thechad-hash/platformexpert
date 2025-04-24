@@ -39,8 +39,8 @@ app.post("/api/feron", async (req, res) => {
   }
 });
 
-// Start the server (PORT from .env or default to 3001)
+// Start the server (PORT from Railway or fallback to 3001 locally)
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log(`FERON backend running at http://localhost:${PORT}`);
+  console.log(`FERON backend running on port ${PORT}`);
 });
