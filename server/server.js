@@ -1,19 +1,21 @@
-// Load environment variables
+// server.js
+
+// 1) Load environment variables
 import dotenv from 'dotenv';
 dotenv.config();
 
-// Import required modules
+// 2) Core imports
 import express from 'express';
 import cors from 'cors';
 import { OpenAI } from 'openai';
 
-// Initialize Express app
+// 3) Create Express app
 const app = express();
 
-// Allowed origin for your Vercel frontend
+// 4) CORS configuration
+//    Replace with your actual Vercel front-end URL if different
 const FRONTEND_ORIGIN = 'https://feron-chat-live.vercel.app';
 
-// 1) Enable CORS for preflight & actual requests
 app.use(
   cors({
     origin: FRONTEND_ORIGIN,
@@ -21,38 +23,35 @@ app.use(
     allowedHeaders: ['Content-Type'],
   })
 );
-// 2) Handle all OPTIONS preflight requests
-app.options('*', cors());
 
-// 3) JSON body parsing
+// 5) JSON body parsing
 app.use(express.json());
 
-// Initialize OpenAI client
+// 6) OpenAI client
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-// Define the chat route
+// 7) Your chat endpoint
 app.post('/api/feron', async (req, res) => {
   try {
     const { messages } = req.body;
     const chatResponse = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo', // or "gpt-4"
+      model: 'gpt-3.5-turbo',
       messages: [
         { role: 'system', content: 'You are FERON, a Tier 1 machinist assistant for CNC operations...' },
         ...messages,
       ],
       temperature: 0.7,
     });
-    const reply = chatResponse.choices[0].message.content;
-    res.json({ reply });
+    res.json({ reply: chatResponse.choices[0].message.content });
   } catch (err) {
-    console.error('FERON API Error:', err.message);
+    console.error('FERON API Error:', err);
     res.status(500).json({ error: 'Something went wrong' });
   }
 });
 
-// Start the server (Railway sets PORT, fallback to 3001 locally)
+// 8) Start server on Railway / fallback to 3001
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`FERON backend running on port ${PORT}`);
