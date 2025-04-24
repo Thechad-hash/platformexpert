@@ -15,7 +15,7 @@ export default function FeronChat() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:3001/api/feron", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/feron`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: [...messages, userMessage] }),
@@ -49,7 +49,7 @@ export default function FeronChat() {
     const formData = new FormData();
     formData.append("file", file);
 
-    await fetch("http://localhost:3001/api/upload", {
+    await fetch(`${import.meta.env.VITE_API_URL}/api/upload`, {
       method: "POST",
       body: formData,
     });
