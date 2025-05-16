@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 console.log(">>>> VITE_API_URL is:", import.meta.env.VITE_API_URL);
 
 export default function FeronChat() {
+  const [walletAddress, setWalletAddress] = useState("");
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -90,7 +91,32 @@ export default function FeronChat() {
 
   return (    
     <><div style={{ display: "flex", gap: "12px", justifyContent: "center", margin: "20px 0" }}>
-    
+        <a
+        href="http://localhost:5174"
+        style={{
+          padding: "10px 20px",
+          backgroundColor: "#4F46E5",
+          color: "white",
+          borderRadius: "6px",
+          fontSize: "14px",
+          textDecoration: "none"
+        }}
+      >
+        Go to License Page
+      </a>
+      <a
+        href="http://localhost:5173"
+        style={{
+          padding: "10px 20px",
+          backgroundColor: "#10B981",
+          color: "white",
+          borderRadius: "6px",
+          fontSize: "14px",
+          textDecoration: "none"
+        }}
+      >
+        Go to Register Page
+      </a>  
     </div><div style={{ padding: "20px", maxWidth: "600px", margin: "0 auto" }}>
         <h1 style={{ fontSize: "24px", fontWeight: "bold", textAlign: "center" }}>
           FERON AI Assistant
