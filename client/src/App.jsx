@@ -92,7 +92,7 @@ export default function FeronChat() {
   return (    
     <><div style={{ display: "flex", gap: "12px", justifyContent: "center", margin: "20px 0" }}>
         <a
-        href="http://localhost:5174"
+        href="https://ferontriallicensebip.vercel.app/"
         style={{
           padding: "10px 20px",
           backgroundColor: "#4F46E5",
@@ -102,10 +102,10 @@ export default function FeronChat() {
           textDecoration: "none"
         }}
       >
-        Go to License Page
+        Go to License MY Ai Page
       </a>
       <a
-        href="http://localhost:5173"
+        href="https://feron-platform-smart-contracts-ui.vercel.app/"
         style={{
           padding: "10px 20px",
           backgroundColor: "#10B981",
@@ -115,7 +115,7 @@ export default function FeronChat() {
           textDecoration: "none"
         }}
       >
-        Go to Register Page
+        Go to Register MY Ai Page
       </a>  
     </div><div style={{ padding: "20px", maxWidth: "600px", margin: "0 auto" }}>
         <h1 style={{ fontSize: "24px", fontWeight: "bold", textAlign: "center" }}>
