@@ -119,7 +119,7 @@ export default function FeronChat() {
       </a>  
     </div><div style={{ padding: "20px", maxWidth: "600px", margin: "0 auto" }}>
         <h1 style={{ fontSize: "24px", fontWeight: "bold", textAlign: "center" }}>
-          FERON AI Assistant
+          FERON AI Plarform Expert
         </h1>
         <p style={{ textAlign: "center", color: "#666" }}>
           What do you want to know about the AI tools platform?
@@ -176,6 +176,7 @@ export default function FeronChat() {
                     padding: "8px",
                     borderRadius: "4px",
                     fontStyle: msg.role === "system" ? "italic" : "normal",
+                    color: "#000000",
                   }}
                 >
                   {msg.content}
