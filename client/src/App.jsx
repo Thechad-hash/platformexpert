@@ -92,7 +92,7 @@ export default function FeronChat() {
   return (    
     <><div style={{ display: "flex", gap: "12px", justifyContent: "center", margin: "20px 0" }}>
         <a
-        href="https://ferontriallicensebip.vercel.app/"
+        href="https://feron.ai/license-ai"
         style={{
           padding: "10px 20px",
           backgroundColor: "#4F46E5",
@@ -102,10 +102,10 @@ export default function FeronChat() {
           textDecoration: "none"
         }}
       >
-        Go to License MY Ai Page
+        Go to License Ai Page
       </a>
       <a
-        href="https://feron-platform-smart-contracts-ui.vercel.app/"
+        href="https://feron.ai/"
         style={{
           padding: "10px 20px",
           backgroundColor: "#10B981",
@@ -115,14 +115,14 @@ export default function FeronChat() {
           textDecoration: "none"
         }}
       >
-        Go to Register MY Ai Page
+        Go to Feron.ai
       </a>  
     </div><div style={{ padding: "20px", maxWidth: "600px", margin: "0 auto" }}>
         <h1 style={{ fontSize: "24px", fontWeight: "bold", textAlign: "center" }}>
-          FERON AI Plarform Expert
+          FERON AI Plarform Expert v1
         </h1>
         <p style={{ textAlign: "center", color: "#666" }}>
-          What do you want to know about the AI tools platform?
+          Talk to v2 platform expert at feron.ai!
         </p>
 
         {!walletAddress ? (
